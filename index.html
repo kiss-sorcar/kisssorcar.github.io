@@ -12,14 +12,14 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #111;
-      --surface: #1a1a1a;
-      --border: #2a2a2a;
-      --text: #d9d9d9;
-      --text-dim: #888;
-      --accent: #c9a227;
-      --accent-soft: rgba(201, 162, 39, 0.12);
-      --green: #5cb85c;
+      --bg: #fff;
+      --surface: #f6f6f6;
+      --border: #e0e0e0;
+      --text: #222;
+      --text-dim: #666;
+      --accent: #b08a1e;
+      --accent-soft: rgba(176, 138, 30, 0.10);
+      --green: #2e7d32;
     }
 
     html { scroll-behavior: smooth; }
@@ -38,7 +38,7 @@
       top: 0;
       width: 100%;
       z-index: 100;
-      background: rgba(17, 17, 17, 0.92);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -84,6 +84,12 @@
       text-align: center;
     }
 
+    .hero-logo {
+      width: 140px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
     .hero .tag {
       display: inline-block;
       font-size: 0.78rem;
@@ -101,7 +107,7 @@
       line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 1.5rem;
-      color: #f0f0f0;
+      color: #111;
     }
 
     .hero .desc {
@@ -143,10 +149,10 @@
 
     .btn-main {
       background: var(--accent);
-      color: #111;
+      color: #fff;
     }
 
-    .btn-main:hover { background: #b8921f; }
+    .btn-main:hover { background: #96750f; }
 
     .btn-ghost {
       background: transparent;
@@ -218,7 +224,7 @@
       letter-spacing: -0.01em;
       margin-bottom: 0.6rem;
       text-align: center;
-      color: #f0f0f0;
+      color: #111;
     }
 
     section .sub {
@@ -429,7 +435,7 @@
       font-size: 1.2rem;
       font-weight: 600;
       margin-bottom: 0.25rem;
-      color: #f0f0f0;
+      color: #111;
     }
 
     .author-box .affil {
@@ -481,8 +487,8 @@
       <a href="#" class="logo">KISS Sorcar</a>
       <ul class="links">
         <li><a href="#install">Install</a></li>
-        <li><a href="#architecture">Architecture</a></li>
         <li><a href="#features">Features</a></li>
+        <li><a href="#architecture">Architecture</a></li>
         <li><a href="#models">Models</a></li>
         <li><a href="https://github.com/ksenxx/kiss_ai">GitHub</a></li>
       </ul>
@@ -491,6 +497,7 @@
 
   <!-- Hero -->
   <div class="hero">
+    <img src="assets/KISS-Sorcar.png" alt="KISS Sorcar" class="hero-logo">
     <div class="tag">Open Source · Apache 2.0</div>
     <h1>An AI Assistant That Keeps It Simple</h1>
     <p class="desc">
@@ -546,49 +553,6 @@
     </div>
   </section>
 
-  <!-- Architecture -->
-  <section id="architecture">
-    <h2>Five-Layer Architecture</h2>
-    <p class="sub">Each layer adds exactly one concern. ~1,850 lines of Python total.</p>
-    <div class="layers">
-      <div class="layer">
-        <div class="n">1</div>
-        <div class="info">
-          <h4>KISS Agent</h4>
-          <p>Budget-tracked ReAct loop with native function calling. 409 lines.</p>
-        </div>
-      </div>
-      <div class="layer">
-        <div class="n">2</div>
-        <div class="info">
-          <h4>Relentless Agent</h4>
-          <p>Automatic summarization and continuation across sub-sessions. 297 lines.</p>
-        </div>
-      </div>
-      <div class="layer">
-        <div class="n">3</div>
-        <div class="info">
-          <h4>Sorcar Agent</h4>
-          <p>Coding tools, browser automation, and parallel sub-agent execution. 323 lines.</p>
-        </div>
-      </div>
-      <div class="layer">
-        <div class="n">4</div>
-        <div class="info">
-          <h4>Chat Sorcar Agent</h4>
-          <p>Persistent multi-turn chat sessions with history recall. 120 lines.</p>
-        </div>
-      </div>
-      <div class="layer">
-        <div class="n">5</div>
-        <div class="info">
-          <h4>Worktree Sorcar Agent</h4>
-          <p>Git worktree isolation — every task on its own branch. 692 lines.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Features -->
   <section id="features">
     <h2>Features</h2>
@@ -629,6 +593,49 @@
       <div class="feat">
         <h3>Quality Over Speed</h3>
         <p>Runs linters, type checkers, and tests before declaring success. Clean, well-tested code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id="architecture">
+    <h2>Five-Layer Architecture</h2>
+    <p class="sub">Each layer adds exactly one concern. ~1,850 lines of Python total.</p>
+    <div class="layers">
+      <div class="layer">
+        <div class="n">1</div>
+        <div class="info">
+          <h4>KISS Agent</h4>
+          <p>Budget-tracked ReAct loop with native function calling. 409 lines.</p>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="n">2</div>
+        <div class="info">
+          <h4>Relentless Agent</h4>
+          <p>Automatic summarization and continuation across sub-sessions. 297 lines.</p>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="n">3</div>
+        <div class="info">
+          <h4>Sorcar Agent</h4>
+          <p>Coding tools, browser automation, and parallel sub-agent execution. 323 lines.</p>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="n">4</div>
+        <div class="info">
+          <h4>Chat Sorcar Agent</h4>
+          <p>Persistent multi-turn chat sessions with history recall. 120 lines.</p>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="n">5</div>
+        <div class="info">
+          <h4>Worktree Sorcar Agent</h4>
+          <p>Git worktree isolation — every task on its own branch. 692 lines.</p>
+        </div>
       </div>
     </div>
   </section>
