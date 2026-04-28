@@ -333,14 +333,21 @@
     }
 
     .install-code,
-    .cli-line {
+    .cli-panel {
       background: #0d0d0d;
       color: #f4f4f4;
       padding: 0.95rem 1.1rem;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.82rem;
       overflow-x: auto;
+    }
+
+    .install-code { white-space: nowrap; }
+
+    .cli-line {
       white-space: nowrap;
+      overflow-x: auto;
+      line-height: 1.55;
     }
 
     .install-code { margin-bottom: 1rem; }
@@ -376,17 +383,13 @@
       letter-spacing: 0.16em;
     }
 
-    .cli-line {
-      margin-bottom: 0.45rem;
-      color: #d8d8d8;
-    }
-
+    .cli-line { color: #d8d8d8; }
     .cli-line .c { color: #9bd29c; }
     .cli-line .f { color: #e0b76b; }
     .cli-line .s { color: #cdb6e6; }
     .cli-line .x { color: #8a8a8a; font-style: italic; }
     .cli-line .o { color: #d8d8d8; }
-    .cli-line.spacer { height: 0.4rem; margin: 0; }
+    .cli-line.spacer { height: 0.6rem; }
 
     /* Architecture */
     .layers {
@@ -643,24 +646,26 @@
     </div>
     <div class="cli-block">
       <h3>From the Terminal</h3>
-      <div class="cli-line"><span class="x"># Run a one-shot task</span></div>
-      <div class="cli-line"><span class="c">sorcar</span> <span class="f">-t</span> <span class="s">"What is 2435*234"</span></div>
-      <div class="cli-line spacer"></div>
-      <div class="cli-line"><span class="x"># Start a new chat session (-n) and stay in chat mode</span></div>
-      <div class="cli-line"><span class="c">sorcar</span> <span class="f">-n -t --use-chat</span> <span class="s">"What is 2435*234?"</span></div>
-      <div class="cli-line spacer"></div>
-      <div class="cli-line"><span class="x"># Use a specific model</span></div>
-      <div class="cli-line"><span class="c">sorcar</span> <span class="f">-m</span> <span class="s">"claude-sonnet-4-6"</span> <span class="f">-t</span> <span class="s">"What is 2435*234?"</span></div>
-      <div class="cli-line spacer"></div>
-      <div class="cli-line"><span class="x"># Read the task from a file</span></div>
-      <div class="cli-line"><span class="c">echo</span> <span class="s">"Can you find the cheapest non-stop flight from SFO to JFK on June 15 by consulting various websites?"</span> <span class="o">&gt;</span> prompt</div>
-      <div class="cli-line"><span class="c">sorcar</span> <span class="f">-f</span> prompt</div>
-      <div class="cli-line spacer"></div>
-      <div class="cli-line"><span class="x"># Drive a desktop app</span></div>
-      <div class="cli-line"><span class="c">sorcar</span> <span class="f">-t</span> <span class="s">'Can you send the message "Hello from Sorcar!" to ksen via the desktop slack app?'</span></div>
-      <div class="cli-line spacer"></div>
-      <div class="cli-line"><span class="x"># Explain a code path step by step</span></div>
-      <div class="cli-line"><span class="c">sorcar</span> <span class="f">-t</span> <span class="s">'Can you show me the detailed step-by-step workflow of gepa.py?'</span></div>
+      <div class="cli-panel">
+        <div class="cli-line"><span class="x"># Run a one-shot task</span></div>
+        <div class="cli-line"><span class="c">sorcar</span> <span class="f">-t</span> <span class="s">"What is 2435*234"</span></div>
+        <div class="cli-line spacer"></div>
+        <div class="cli-line"><span class="x"># Start a new chat session (-n) and stay in chat mode</span></div>
+        <div class="cli-line"><span class="c">sorcar</span> <span class="f">-n -t --use-chat</span> <span class="s">"What is 2435*234?"</span></div>
+        <div class="cli-line spacer"></div>
+        <div class="cli-line"><span class="x"># Use a specific model</span></div>
+        <div class="cli-line"><span class="c">sorcar</span> <span class="f">-m</span> <span class="s">"claude-sonnet-4-6"</span> <span class="f">-t</span> <span class="s">"What is 2435*234?"</span></div>
+        <div class="cli-line spacer"></div>
+        <div class="cli-line"><span class="x"># Read the task from a file</span></div>
+        <div class="cli-line"><span class="c">echo</span> <span class="s">"Can you find the cheapest non-stop flight from SFO to JFK on June 15 by consulting various websites?"</span> <span class="o">&gt;</span> prompt</div>
+        <div class="cli-line"><span class="c">sorcar</span> <span class="f">-f</span> prompt</div>
+        <div class="cli-line spacer"></div>
+        <div class="cli-line"><span class="x"># Drive a desktop app</span></div>
+        <div class="cli-line"><span class="c">sorcar</span> <span class="f">-t</span> <span class="s">'Can you send the message "Hello from Sorcar!" to ksen via the desktop slack app?'</span></div>
+        <div class="cli-line spacer"></div>
+        <div class="cli-line"><span class="x"># Explain a code path step by step</span></div>
+        <div class="cli-line"><span class="c">sorcar</span> <span class="f">-t</span> <span class="s">'Can you show me the detailed step-by-step workflow of gepa.py?'</span></div>
+      </div>
     </div>
   </section>
 
@@ -672,6 +677,10 @@
       <p class="sub">Built for software engineering and general-purpose automation.</p>
     </div>
     <div class="feats">
+      <div class="feat">
+        <h3>General-Purpose Assistant</h3>
+        <p>More than a coding tool. Books flights, drives desktop apps, navigates websites, explains code, and automates everyday workflows from a single prompt.</p>
+      </div>
       <div class="feat">
         <h3>Runs Relentlessly</h3>
         <p>Automatic summarization and continuation across sub-sessions. Never gives up until the task is done.</p>
@@ -707,6 +716,10 @@
       <div class="feat">
         <h3>Quality Over Speed</h3>
         <p>Runs linters, type checkers, and tests before declaring success. Clean, well-tested code.</p>
+      </div>
+      <div class="feat">
+        <h3>Time-Tested Engineering Principles</h3>
+        <p>A robust system prompt encodes engineering discipline directly into the agent: read before writing, test before fixing, plan before executing, verify before finishing.</p>
       </div>
     </div>
   </section>
@@ -798,7 +811,6 @@
   <section id="author">
     <div class="section-head">
       <span class="num">§ 06 — Author</span>
-      <h2>Meet the author.</h2>
     </div>
     <div class="author-box">
       <div class="name">Koushik Sen</div>
